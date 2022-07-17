@@ -1,4 +1,9 @@
-local minetest, vector, VoxelManip, dump = minetest, vector, VoxelManip, dump
+local minetest, vector, dump = minetest, vector, dump
+
+local modname = minetest.get_current_modname()
+local modpath = minetest.get_modpath(modname)
+local do_example = false  -- Don't load the example code
+do_example = true -- Load it
 
 wfc = {}
 local v = vector.new
@@ -150,3 +155,6 @@ function wfc:generate_at(pointA, pointB)
 	end
 	minetest.log("error", "TODO generate_at")
 end]]
+if do_example then
+	dofile(modpath.."/example.lua")
+end
