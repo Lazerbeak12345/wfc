@@ -1,4 +1,4 @@
-# Wave Function Collapse inside of Minetest
+# Wave Function Collapse for Minetest
 
 Thanks to [this video](https://youtu.be/2SuvO4Gi7uY) for introducing me to this
 algorithim, and for making a simple explanation of it.
