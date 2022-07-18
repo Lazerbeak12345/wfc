@@ -21,5 +21,19 @@ local generator = wfc.new{
 generator:generate_at(v(0, 0, 0), v(10, 100, 10))
 ]]
 --minetest.log("error", dump(_VERSION) .. dump(bit32))
--- TODO register biome
+minetest.register_biome({
+	name = "dead_city",
+	node_top = "default:stone_block",
+	depth_top = 5,
+	node_filler = "default:gravel",
+	depth_filler = 3,
+	y_max = 1000,
+	y_min = -3,
+	vertical_blend = 8,
+	heat_point = 50,
+	humidity_point = 50,
+})
+-- TODO use that thingy to make the thingy spawned and somehow get a VM from all that
+
+
 -- -- TODO use bit.* to make a bitfield
