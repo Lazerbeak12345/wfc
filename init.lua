@@ -22,9 +22,10 @@ function wfc.new(def)
 		self:addBlock(key,value)
 	end
 	self:update_hitbox_extent()
-	-- TODO relationships should be asserted to be mutual
+	self:check_for_constraint_errors()
 	return self
 end
+
 function wfc:addBlock(name, constraints)
 	local id = minetest.get_content_id(name)
 	local newC = {}
@@ -49,6 +50,11 @@ function wfc:update_hitbox_extent()
 	self.extent.max = v(xMax, yMax, zMax)
 	self.extent.min = v(xMin, yMin, zMin)
 end
+function wfc:check_for_constraint_errors()
+	minetest.log("error", "check_for_constraint_errors")
+	-- TODO relationships should be asserted to be mutual
+end
+
 function wfc.prepareConstraint(constraint)
 	local vec = constraint[1]
 	local bundle = {}
@@ -57,6 +63,7 @@ function wfc.prepareConstraint(constraint)
 	end
 	return { vec, bundle }
 end
+
 local function getInitialBlocks(self, pointA, pointB)
 	local vm = self.isMapgen and minetest.get_mapgen_object("voxelmanip") or minetest.get_voxel_manip()
 	local emin, emax = vm:read_from_map(pointA, pointB)
