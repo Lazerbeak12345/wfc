@@ -6,9 +6,14 @@ local do_example = false  -- Don't load the example code
 do_example = true -- Load it
 
 wfc = {}
+wfc.generic = dofile(modpath .. '/generic.lua')
+function wfc.error(message)
+	minetest.log("error", message)
+end
 local v = vector.new
 local metatable = {__index = wfc}
 function wfc.new(def)
+	wfc.error("Broken rn. Code needs to use the new generic api I made.")
 	local self = {
 		constraints = {}, -- Unordered Iterable of constraints
 		extent = {
