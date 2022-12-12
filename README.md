@@ -11,6 +11,10 @@ compatibility - the change will be made.
 To ensure maximum speed, this libarary plans on making full use of new features
 in Minetest as they come out.
 
+## Unit tests
+
+Most Minetest mods don't use unit testing, but the logic for most mods is simple enough they don't really need tests. WFC is _just_ complicated enough that I feel like it's needed.
+
 ## References
 
 [that first video]: https://www.youtube.com/watch?v=2SuvO4Gi7uY
