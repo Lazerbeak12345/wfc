@@ -64,3 +64,4 @@ function solver:solve(state)
 		)
 	end
 end
+return solver
