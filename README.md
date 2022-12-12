@@ -1,5 +1,7 @@
 # Wave Function Collapse for Minetest
 
+**This mod is _highly_ experimental. Things will break.**
+
 Thanks to [this video][that first video] for introducing me to this
 algorithim, and for making a simple explanation of it.
 
