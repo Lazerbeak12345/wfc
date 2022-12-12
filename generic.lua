@@ -13,6 +13,7 @@ function solver.new(init)
 	setmetatable(self, solver)
 	return self
 end
+setmetatable(solver, { __call = solver.new }) -- Magic
 function solver:_full_queue(size)
 	local index = 1
 	local output = self.set.new()
